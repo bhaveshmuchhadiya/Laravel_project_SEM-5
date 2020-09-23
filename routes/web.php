@@ -23,6 +23,9 @@ Route::get('/leaves', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/admin/index', function () {
+    return view('admin/index');
+});
 // Route::get('/registration', function () {
 //     return view('registration');
 // });
