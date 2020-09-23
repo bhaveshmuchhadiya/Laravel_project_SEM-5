@@ -29,14 +29,7 @@
 			
 			<div class="clearfix"> </div>
 		</div>
-				
-				
-	
-    <!--footer-->
-	<div class="footer">
-	   <p>&copy;  All Rights Reserved | Design by <a href="#" target="_blank">Bhavesh muchhadiya & Harshil ranpara</a></p>		
-	</div>
-    <!--//footer-->
-	</div>
 		
+	</div></div>		
 @endsection
+@extends('footer')

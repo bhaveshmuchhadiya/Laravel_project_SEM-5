@@ -110,16 +110,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
       <nav class="navbar navbar-inverse">
           <div class="navbar-header">
             
-            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-user"></span> ELMS   </a></h1>
+            <h1><a class="navbar-brand" href="index"><span class="fa fa-user"></span> ELMS   </a></h1>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
               <li class="header">Employee Action    </li>
               <li class="treeview">     
-                <a href="/">
+                <a href="#">
                 <i class="fa fa-user"></i> <span>My Profile</span>
                 </a>
-                <a href="leave"> <i class="fa fa-area-chart"></i> <span>Leaves</span></a>
+                <a href="leaves"> <i class="fa fa-area-chart"></i> <span>Leaves</span></a>
               </li> 
               <li class="treeview">
                 <a href="#">
@@ -250,4 +250,5 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>	
 		</div>
 		<!-- //header-ends -->
-@yield('content')
+@yield('content')	
+@yield('footer')

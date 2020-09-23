@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/index', function () {
+    return view('index');
+});
+Route::get('/leaves', function () {
+    return view('leave');
+});
 // Route::get('/contact', function () {
 //     return view('contact');
 // });
