@@ -20,6 +20,12 @@ Route::get('/index', function () {
 Route::get('/leaves', function () {
     return view('leave');
 });
+Route::get('/login', function () {
+    return view('login');
+});
+// Route::get('/registration', function () {
+//     return view('registration');
+// });
 // Route::get('/contact', function () {
 //     return view('contact');
 // });
