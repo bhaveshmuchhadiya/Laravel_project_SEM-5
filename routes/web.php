@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/', function () {
+    return view('index');
+});
 
 // Route::get('/contact', function () {
 //     return view('contact');
@@ -22,8 +22,8 @@
 //     return view('db');
 // });
 
-Route::get('/','path_finding@index');
-Route::get('/contact','path_finding@contact');
+// Route::get('/','path_finding@index');
+// Route::get('/contact','path_finding@contact');
 // Route::get('/leave', function () {
 //     return view('header');
 // });

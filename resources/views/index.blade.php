@@ -1,3 +1,5 @@
+@extends('header')
+@section('content')
 		<!-- main content start-->
 		<div id="page-wrapper">
 			<div class="main-page">
@@ -11,7 +13,7 @@
                     </div>
                 </div>
         	 </div>
-        	<!-- <div class="col-md-3 widget">
+        	<div class="col-md-3 widget">
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                     <div class="stats">
@@ -19,7 +21,7 @@
                       <span>Total Users</span>
                     </div>
                 </div>
-        	 </div> -->
+        	 </div>
         	<div class="clearfix"> </div>
 		</div>
 		
@@ -32,11 +34,9 @@
 	
     <!--footer-->
 	<div class="footer">
-	   <p>&copy; 2018 Glance Design Dashboard. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>		
+	   <p>&copy;  All Rights Reserved | Design by <a href="#" target="_blank">Bhavesh muchhadiya & Harshil ranpara</a></p>		
 	</div>
     <!--//footer-->
 	</div>
 		
-	
-</body>
-</html>
+@endsection

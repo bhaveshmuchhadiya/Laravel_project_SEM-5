@@ -250,3 +250,4 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>	
 		</div>
 		<!-- //header-ends -->
+@yield('content')
