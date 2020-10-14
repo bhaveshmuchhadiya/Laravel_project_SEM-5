@@ -116,9 +116,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <ul class="sidebar-menu">
               <li class="header">Employee Action    </li>
               <li class="treeview">     
-                <a href="#">
+                <a href="emp_home">
                 <i class="fa fa-user"></i> <span>My Profile</span>
                 </a>
+                <a href="apply_leaves"> <i class="fa fa-edit"></i> <span>Apply Leaves</span></a>
                 <a href="leaves"> <i class="fa fa-area-chart"></i> <span>Leaves</span></a>
               </li> 
               <li class="treeview">
@@ -128,6 +129,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="login"><i class="fa fa-angle-right"></i> Login</a></li>
+                  <li><a href="#"><i class="fa fa-angle-right"></i> Logout</a></li>
                   <!-- <li><a href="registration"><i class="fa fa-angle-right"></i> Register</a></li> -->
                   <!-- <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li> -->
                 </ul>

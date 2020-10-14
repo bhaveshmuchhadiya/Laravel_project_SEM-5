@@ -20,6 +20,12 @@ Route::get('/index', function () {
 Route::get('/leaves', function () {
     return view('leave');
 });
+Route::get('/apply_leaves', function () {
+    return view('apply_leave');
+});
+Route::get('/emp_home', function () {
+    return view('employee_home');
+});
 Route::get('/login', function () {
     return view('login');
 });

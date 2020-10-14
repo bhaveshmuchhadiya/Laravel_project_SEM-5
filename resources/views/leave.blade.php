@@ -2,30 +2,37 @@
 @section('content')
 <div id="page-wrapper">
 	<div class="main-page">
-        <a href="#"> <button type="button" class="btn btn-primary" data-toggle="modal" >Apply for leave</button></a>
-        <div class="tables">
-			<div class="panel-body widget-shadow">
-				<h4 class="table">Leaves</h4>
-				<table class="table">
-			    	<thead>
-						<tr>
-				            <th>#</th>
-						    <th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						  <th scope="row">1</th>
-						  <td>Mark</td>
-						  <td>Otto</td>
-						  <td>@mdo</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-        </div>
+        
+<h2 class="title1">Old Leaves</h2>
+<div class="panel-body widget-shadow">
+    <!-- <h4>Old Leaves</h4> -->
+    <table class="table">
+        <thead>
+            <tr>
+              <th>ID</th>
+              <th>Leave Type</th>
+              <th>From date</th>
+              <th>To date</th>
+              <th>Description</th>
+              <th>Posting Date</th>
+              <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Casual Leave</td>
+              <td>13/10/2019</td>
+              <td>14/10/2019</td>
+              <td>apply for casual leave</td>
+              <td>11/10/2019</td>
+              <td>Approved</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
     </div>
 </div>
 @endsection

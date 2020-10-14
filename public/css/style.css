@@ -51,7 +51,7 @@ span.dashboard_text {
     text-transform: capitalize;
     display: block;
     letter-spacing: 1px;
-    padding-left: 30px;
+    padding-left: 35px;
 }
 
 
@@ -1471,6 +1471,7 @@ section#tables  p {
 }
 .form-control {
     border-radius: inherit;
+    width: 50%;
 }
 .help-block {
     margin-top: 10px;
@@ -1500,7 +1501,7 @@ section#tables  p {
   color: #616161;
   background: #fff;
   box-shadow: none !important;
-  width: 100%;
+  width: 30%;
   font-size: 0.85em;
   font-weight: 300;
   height: 40px;
@@ -8455,7 +8456,7 @@ h4.asd label {
 	}
 	span.dashboard_text {
 		font-size: 11px;
-    padding-left: 50px;
+		padding-left: 30px;
 	}
 	.sidebar-left {
 		width: 215px !important;
