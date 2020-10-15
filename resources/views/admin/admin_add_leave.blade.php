@@ -1,5 +1,5 @@
 
 @extends('admin/admin_header')
 @section('content')
-    <h1> index </h1>
+    <h1> add leaves </h1>
 @endsection

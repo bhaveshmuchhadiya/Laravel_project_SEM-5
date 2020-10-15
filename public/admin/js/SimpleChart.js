@@ -9,7 +9,7 @@
         xPadding: 60,
         yPadding: 50,
         topmargin: 25,
-        rightmargin: 20,
+        rightmargin: 10,
         data: null,
         toolwidth: 300,
         toolheight: 300,

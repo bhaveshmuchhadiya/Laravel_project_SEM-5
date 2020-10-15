@@ -29,8 +29,28 @@ Route::get('/emp_home', function () {
 Route::get('/login', function () {
     return view('login');
 });
+// Route::get('/admin/index', function () {
+//     return view('admin/index');
 Route::get('/admin/index', function () {
     return view('admin/index');
+});Route::get('/admin/add_department', function () {
+    return view('admin/admin_add_department');
+});Route::get('/admin/view_department', function () {
+    return view('admin/admin_view_department');
+});Route::get('/admin/add_leave', function () {
+    return view('admin/admin_add_leave');
+});Route::get('/admin/view_leave_type', function () {
+    return view('admin/admin_view_leave_type');
+});Route::get('/admin/add_employee', function () {
+    return view('admin/admin_add_employee');
+});Route::get('/admin/view_employee', function () {
+    return view('admin/admin_view_employee');
+});Route::get('/admin/all_leaves', function () {
+    return view('admin/admin_all_leaves');
+});Route::get('/admin/pandding_leaves', function () {
+    return view('admin/admin_pandding_leaves');
+});Route::get('/admin/approved_leaves', function () {
+    return view('admin/admin_approved_leaves');
 });
 // Route::get('/registration', function () {
 //     return view('registration');
