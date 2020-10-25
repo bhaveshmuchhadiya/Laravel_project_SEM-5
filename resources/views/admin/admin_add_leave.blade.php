@@ -18,10 +18,7 @@
                     <label>Description</label>
                     <textarea type="text" class="form-control"  placeholder="Description" required=""></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Created date</label>
-                    <input type="date" class="form-control"  rows="3" required="">
-                </div>
+               
                 <center>
                 <div class="form-group row">
                     <div class="col-sm-10">

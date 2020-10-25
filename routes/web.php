@@ -33,23 +33,41 @@ Route::get('/login', function () {
 //     return view('admin/index');
 Route::get('/admin/index', function () {
     return view('admin/index');
-});Route::get('/admin/add_department', function () {
+});
+
+Route::get('/admin/add_department', function () {
     return view('admin/admin_add_department');
-});Route::get('/admin/view_department', function () {
+});
+Route::get('/insert_department','department_controller@store');
+Route::get('/admin/view_department', function () {
     return view('admin/admin_view_department');
-});Route::get('/admin/add_leave', function () {
+});
+
+Route::get('/admin/add_leave', function () {
     return view('admin/admin_add_leave');
-});Route::get('/admin/view_leave_type', function () {
+});
+
+Route::get('/admin/view_leave_type', function () {
     return view('admin/admin_view_leave_type');
-});Route::get('/admin/add_employee', function () {
+});
+
+Route::get('/admin/add_employee', function () {
     return view('admin/admin_add_employee');
-});Route::get('/admin/view_employee', function () {
+});
+
+Route::get('/admin/view_employee', function () {
     return view('admin/admin_view_employee');
-});Route::get('/admin/all_leaves', function () {
+});
+
+Route::get('/admin/all_leaves', function () {
     return view('admin/admin_all_leaves');
-});Route::get('/admin/pandding_leaves', function () {
+});
+
+Route::get('/admin/pandding_leaves', function () {
     return view('admin/admin_pandding_leaves');
-});Route::get('/admin/approved_leaves', function () {
+});
+
+Route::get('/admin/approved_leaves', function () {
     return view('admin/admin_approved_leaves');
 });
 // Route::get('/registration', function () {
