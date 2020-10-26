@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\manage_employee;
+use App\add_dept;
 use Illuminate\Http\Request;
 
-class department_controller extends Controller
+class ManageEmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(add_dept $add_dept)
     {
         //
+        // $result = manage_employee::table('department')->get();
+        return view('admin/admin_add_employee')->with('data',add_dept::all());
     }
 
     /**
@@ -34,17 +38,23 @@ class department_controller extends Controller
      */
     public function store(Request $request)
     {
-        //insert department
-        
+        //insert employee
+        $res = new manage_employee();
+        $res->first_name=$request->input('first_name');
+        $res->second_name=$request->input('second_name');
+        $res->last_name=$request->input('last_name');
+        $res->gender=$request->input('gender');
+        $res->department=$request->input('department');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\manage_employee  $manage_employee
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(manage_employee $manage_employee)
     {
         //
     }
@@ -52,10 +62,10 @@ class department_controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\manage_employee  $manage_employee
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(manage_employee $manage_employee)
     {
         //
     }
@@ -64,10 +74,10 @@ class department_controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\manage_employee  $manage_employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, manage_employee $manage_employee)
     {
         //
     }
@@ -75,10 +85,10 @@ class department_controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\manage_employee  $manage_employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(manage_employee $manage_employee)
     {
         //
     }

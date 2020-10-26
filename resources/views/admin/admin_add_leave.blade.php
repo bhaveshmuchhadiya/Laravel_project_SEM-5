@@ -6,17 +6,15 @@
     <nav class="navbar navbar-default mb-xl-5 mb-4">
         <div class="outer-w3-agile col-xl mt-3">
             <!-- <h4 class="tittle-w3-agileits mb-4">Department Type</h4> -->
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select Leave Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Casual</option>
-                        <option>Medical</option>
-                    </select>
+            <form action="../insert_leave_type" method="post">
+            @csrf
+            <div class="form-group">
+                    <label for="exampleFormControlSelect1">Leave Type</label>
+                    <input type="text" class="form-control" name="leave_type" placeholder="Leave Type" required="">
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea type="text" class="form-control"  placeholder="Description" required=""></textarea>
+                    <textarea type="text" class="form-control" name="desc" placeholder="Description" required=""></textarea>
                 </div>
                
                 <center>

@@ -13,29 +13,22 @@
                         <th scope="col">Id</th>
                         <th scope="col">Department Type</th>
                         <th scope="col">Department Code</th>
-                        <th scope="col">Creted Date</th>
                         <th scope="col" colspan=2><center>Actoin</center></th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($showarr as $show)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>HR</td>
-                        <td>HR001</td>
-                        <td>13/10/2020</td>
-                        <td><a href="#"><i class="fas fa-edit"></li>Edit</a></td>
-                        <td><a href="#"><i class="fas fa-trash"></li>delete</a></td>
+                        <th>{{ $show->id }}</th>
+                        <td>{{ $show->department_name }}</td>
+                        <td>{{ $show->department_code }}</td>
+                        <td><a href="update_department/{{$show->id}}"><i class="fas fa-edit"></li>Edit</a></td>
+                        <td><a href="delete/{{$show->id}}"><i class="fas fa-trash"></li>delete</a></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Account</td>
-                        <td>acc001</td>
-                        <td>13/10/2020</td>
-                        <td><a href="#"><i class="fas fa-edit"></li>Edit</a></td>
-                        <td><a href="#"><i class="fas fa-trash"></li>delete</a></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
+            
         </div>
     <!-- </nav> -->
 @endsection

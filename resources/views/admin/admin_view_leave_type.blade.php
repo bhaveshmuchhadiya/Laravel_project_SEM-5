@@ -13,27 +13,20 @@
                         <th scope="col">Id</th>
                         <th scope="col">Leave Type</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Creted Date</th>
+                        
                         <th scope="col" colspan=2><center>Actoin</center></th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($leave_type as $show)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Casual</td>
-                        <td>Casual leaves </td>
-                        <td>13/10/2020</td>
+                        <th scope="row">{{$show->id}}</th>
+                        <td>{{$show->leave_type}}</td>
+                        <td>{{$show->description}}</td>
                         <td><a href="#"><i class="fas fa-edit"></li>Edit</a></td>
-                        <td><a href="#"><i class="fas fa-trash"></li>delete</a></td>
+                        <td><a href="delete/{{$show->id}}"><i class="fas fa-trash"></li>delete</a></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Medical </td>
-                        <td>Medical Leave</td>
-                        <td>13/10/2020</td>
-                        <td><a href="#"><i class="fas fa-edit"></li>Edit</a></td>
-                        <td><a href="#"><i class="fas fa-trash"></li>delete</a></td>
-                    </tr>
+                   @endforeach
                 </tbody>
             </table>
         </div>

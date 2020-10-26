@@ -38,22 +38,32 @@ Route::get('/admin/index', function () {
 Route::get('/admin/add_department', function () {
     return view('admin/admin_add_department');
 });
-Route::get('/insert_department','department_controller@store');
-Route::get('/admin/view_department', function () {
-    return view('admin/admin_view_department');
-});
+Route::post('/insert_department','AddDeptController@store');
+
+Route::get('admin/update_department/{id}','AddDeptController@edit');
+
+Route::get('admin/delete/{id}','AddDeptController@destroy');
+
+// Route::get('/admin/view_department', function () {
+//     return view('admin/admin_view_department');
+// });
+Route::get('/admin/view_department','AddDeptController@show');
 
 Route::get('/admin/add_leave', function () {
     return view('admin/admin_add_leave');
 });
+Route::post('/insert_leave_type','LeaveTypeController@store');
 
-Route::get('/admin/view_leave_type', function () {
-    return view('admin/admin_view_leave_type');
-});
+// Route::get('/admin/view_leave_type', function () {
+//     return view('admin/admin_view_leave_type');
+// });
+Route::get('/admin/view_leave_type','LeaveTypeController@show');
+Route::get('/admin/delete/{id}','LeaveTypeController@destroy');
 
-Route::get('/admin/add_employee', function () {
-    return view('admin/admin_add_employee');
-});
+// Route::get('/admin/add_employee', function () {
+//     return view('admin/admin_add_employee');
+// });
+Route::get('/admin/add_employee','ManageEmployeeController@index');
 
 Route::get('/admin/view_employee', function () {
     return view('admin/admin_view_employee');
