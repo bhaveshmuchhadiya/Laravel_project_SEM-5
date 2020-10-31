@@ -129,7 +129,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="login"><i class="fa fa-angle-right"></i> Login</a></li>
-                  <li><a href="#"><i class="fa fa-angle-right"></i> Logout</a></li>
+                  <li><a href="logout"><i class="fa fa-angle-right"></i> Logout</a></li>
                   <!-- <li><a href="registration"><i class="fa fa-angle-right"></i> Register</a></li> -->
                   <!-- <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li> -->
                 </ul>

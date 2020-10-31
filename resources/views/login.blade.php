@@ -5,11 +5,12 @@
 		<h2 class="title1">Login</h2>
 	    <div class="widget-shadow">
 			<div class="login-body">
-				<form action="#" method="post">
+				<form action="{{action('LoginController@store')}}" method="post">
+					@csrf
 					<input type="email" class="user" name="email" placeholder="Enter Your Email" required="">
 					<input type="password" name="password" class="lock" placeholder="Password" required="">
 					<div class="forgot-grid">
-						<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+					
 		    			<div class="forgot">
 			    			<a href="#">forgot password?</a>
 				    	</div>

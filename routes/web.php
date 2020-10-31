@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 });
 Route::get('/index', function () {
     return view('index');
@@ -35,39 +35,47 @@ Route::get('/admin/index', function () {
     return view('admin/index');
 });
 
-Route::get('/admin/add_department', function () {
-    return view('admin/admin_add_department');
+Route::get('/admin/login', function () {
+    return view('admin/admin_login');
 });
+
+// Route::get('/login','LoginController@index');
+Route::resource('/login','LoginController');
+Route::get('/logout','LoginController@destroy');
+
+//department Routes
+
+Route::get('/admin/add_department','AddDeptController@index');
 Route::post('/insert_department','AddDeptController@store');
-
-Route::get('admin/update_department/{id}','AddDeptController@edit');
-
+Route::get('admin/edit_department{id}','AddDeptController@edit');
+Route::post('admin/update_department/{id}','AddDeptController@update');
 Route::get('admin/delete/{id}','AddDeptController@destroy');
-
-// Route::get('/admin/view_department', function () {
-//     return view('admin/admin_view_department');
-// });
 Route::get('/admin/view_department','AddDeptController@show');
 
-Route::get('/admin/add_leave', function () {
-    return view('admin/admin_add_leave');
-});
-Route::post('/insert_leave_type','LeaveTypeController@store');
+// Leave_type Routes
 
-// Route::get('/admin/view_leave_type', function () {
-//     return view('admin/admin_view_leave_type');
-// });
+Route::get('/admin/add_leave','LeaveTypeController@index');
+Route::post('/insert_leave_type','LeaveTypeController@store');
 Route::get('/admin/view_leave_type','LeaveTypeController@show');
+Route::get('/admin/edit_leave_type{id}','LeaveTypeController@edit');
+Route::post('/admin/update_leavetype/{id}','LeaveTypeController@update');
 Route::get('/admin/delete/{id}','LeaveTypeController@destroy');
 
-// Route::get('/admin/add_employee', function () {
-//     return view('admin/admin_add_employee');
-// });
-Route::get('/admin/add_employee','ManageEmployeeController@index');
+//Employee Routes
 
-Route::get('/admin/view_employee', function () {
-    return view('admin/admin_view_employee');
-});
+Route::get('/admin/add_employee','ManageEmployeeController@index');
+Route::post('/admin/admin/insert_employee','ManageEmployeeController@store');
+Route::get('/admin/view_employee','ManageEmployeeController@show');
+Route::get('/admin/edit_employee{id}','ManageEmployeeController@edit');
+Route::post('/admin/update_employee/{id}','ManageEmployeeController@update');
+
+// Route::get('/admin/view_employee', function () {
+//     return view('admin/admin_view_employee');
+// });
+
+
+
+//Leaves Routes
 
 Route::get('/admin/all_leaves', function () {
     return view('admin/admin_all_leaves');

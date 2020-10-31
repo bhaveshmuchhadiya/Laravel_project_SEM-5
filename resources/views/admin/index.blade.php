@@ -2,6 +2,7 @@
 @extends('admin/admin_header')
 @section('content')
     
+
 <div class="outer-w3-agile col-xl">
                 <div class="stat-grid p-3 d-flexalign-items-center justify-content-between bg-primary">
                     <div class="s-l">

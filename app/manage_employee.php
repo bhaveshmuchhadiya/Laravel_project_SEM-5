@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class manage_employee extends Model
 {
     //
-    protected $table='manage_emplolyees';
+    protected $table='manage_employees';
     protected $fallable = ['id','first_name','second_name','last_name','department','birthdate','address','city','email','mobile','username','password'];
 }

@@ -15,6 +15,7 @@ class AddDeptController extends Controller
     public function index()
     {
         //
+        return view('admin/admin_add_department');
     }
 
     /**
@@ -64,7 +65,7 @@ class AddDeptController extends Controller
      */
     public function edit(add_dept $add_dept,$id)
     {
-        return view('admin/admin_update_department')->with('showarr',add_dept::find($id));
+        return view('admin/admin_update_department')->with('show',add_dept::find($id));
     }
 
     /**
@@ -74,9 +75,13 @@ class AddDeptController extends Controller
      * @param  \App\add_dept  $add_dept
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, add_dept $add_dept)
+    public function update(Request $request, add_dept $add_dept,$id)
     {
         //
+        $res = add_dept::find($request->id);
+        $res->department_name=$request->input('dept_name'); 
+        $res->save();
+        return redirect('admin/view_department');
     }
 
     /**

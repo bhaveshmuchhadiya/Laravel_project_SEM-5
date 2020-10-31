@@ -2,6 +2,9 @@
 @section('content')
 		<!-- main content start-->
 		<div id="page-wrapper">
+<h1>{{session('email')['email']}}</h1>
+<!-- <h1><a href="logout">logout</a></h1> -->
+
 			<div class="main-page">
 			<div class="col_3">
         	<!-- <div class="col-md-3 widget widget1">

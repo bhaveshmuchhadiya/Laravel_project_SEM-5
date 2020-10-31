@@ -15,6 +15,7 @@ class LeaveTypeController extends Controller
     public function index()
     {
         //
+        return view('admin/admin_add_leave');
     }
 
     /**
@@ -61,9 +62,10 @@ class LeaveTypeController extends Controller
      * @param  \App\leave_type  $leave_type
      * @return \Illuminate\Http\Response
      */
-    public function edit(leave_type $leave_type)
+    public function edit(leave_type $leave_type,$id)
     {
         //
+        return view("admin/admin_update_leavetype")->with('show',leave_type::find($id));
     }
 
     /**
@@ -73,9 +75,14 @@ class LeaveTypeController extends Controller
      * @param  \App\leave_type  $leave_type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, leave_type $leave_type)
+    public function update(Request $request, leave_type $leave_type,$id)
     {
         //
+        $res = leave_type::find($request->id);
+        $res->leave_type=$request->input('leave_type');
+        $res->description=$request->input('desc');
+        $res->save();
+        return redirect("admin/view_leave_type");
     }
 
     /**

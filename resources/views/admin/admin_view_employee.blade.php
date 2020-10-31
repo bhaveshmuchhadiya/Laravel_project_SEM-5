@@ -11,25 +11,23 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Employee ID</th>
                         <th scope="col">Full Name</th>
                         <th scope="col">Department</th>
-                        <th scope="col">status</th>
                         <th scope="col">Registration Date</th>
                         <th scope="col" colspan=2><center>Actoin</center></th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($showarr as $show)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>EMP001</td>
-                        <td>Bhavesh muchhadiya</td>
-                        <td>Development</td>
-                        <td>Active</td>
-                        <td>10-02-2020</td>
-                        <td><a href="#"><i class="fas fa-edit"></li>Edit</a></td>
+                        <th scope="row">{{$show->id}}</th>
+                        <td>{{$show->first_name}} {{$show->second_name}} {{$show->last_name}}</td>
+                        <td>{{$show->department}}</td>
+                        <td>{{$show->created_at}}</td>
+                        <td><a href="edit_employee{{$show->id}}"><i class="fas fa-edit"></li>Edit</a></td>
                         <td><a href="#"><i class="fas fa-trash"></li>delete</a></td>
                     </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

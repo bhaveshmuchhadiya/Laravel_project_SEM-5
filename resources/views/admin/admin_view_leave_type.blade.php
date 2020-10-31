@@ -23,7 +23,7 @@
                         <th scope="row">{{$show->id}}</th>
                         <td>{{$show->leave_type}}</td>
                         <td>{{$show->description}}</td>
-                        <td><a href="#"><i class="fas fa-edit"></li>Edit</a></td>
+                        <td><a href="edit_leave_type{{$show->id}}"><i class="fas fa-edit"></li>Edit</a></td>
                         <td><a href="delete/{{$show->id}}"><i class="fas fa-trash"></li>delete</a></td>
                     </tr>
                    @endforeach
