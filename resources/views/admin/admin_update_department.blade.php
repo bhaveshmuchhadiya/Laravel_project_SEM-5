@@ -6,7 +6,7 @@
     <nav class="navbar navbar-default mb-xl-5 mb-4">
         <div class="outer-w3-agile col-xl mt-3">
         <!-- <h4 class="tittle-w3-agileits mb-4">Department Type</h4> -->
-        <form action="../update_department/{{$show->id}}" method="post">
+        <form action="update_department/{{$show->id}}" method="post">
         @csrf  
         <div class="form-group">
                 <label for="exampleFormControlSelect1">Department name</label>

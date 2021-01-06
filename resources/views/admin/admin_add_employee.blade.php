@@ -2,18 +2,18 @@
 @extends('admin/admin_header')
 @section('content')
    
-<h1>Add Department</h1>
+<h1>Add employee</h1>
     <div class="outer-w3-agile mt-3">
-        <h4 class="tittle-w3-agileits mb-4">Grid System Form</h4>
+        <!-- <h4 class="tittle-w3-agileits mb-4">Grid System Form</h4> -->
         <form action="admin/insert_employee" method="post"><div class="form-row">
                 @csrf
                 <div class="form-group col-md-4">
                     <label>First name : </label>
-                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required="">
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Second name : </label>
-                    <input type="text" class="form-control" name="second_name" placeholder="Second Name" required="">
+                    <input type="text" class="form-control" name="second_name" placeholder="Second Name" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label>Last Name :</label>

@@ -19,14 +19,16 @@
             </tr>
         </thead>
         <tbody>
+        @foreach($data as $d)
             <tr>
-              <th scope="row">1</th>
-              <td>Casual Leave</td>
-              <td>13/10/2019</td>
-              <td>14/10/2019</td>
-              <td>apply for casual leave</td>
-              <td>11/10/2019</td>
-              <td>Approved</td>
+              <th scope="row">{{$d->e_id}}</th>
+              <td>{{$d->leave_type}}</td>
+              <td>{{$d->from_date}}</td>
+              <td>{{$d->to_date}}</td>
+              <td>{{$d->description}}</td>
+              <td>{{$d->created_at}}</td>
+              <td>{{$d->status}}</td>
+            @endforeach
             </tr>
             
         </tbody>

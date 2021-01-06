@@ -17,7 +17,13 @@ class ManageEmployeeController extends Controller
     {
         //
         // $result = manage_employee::table('department')->get();
-        return view('admin/admin_add_employee')->with('data',add_dept::all());
+        if(session('email')['email'])
+        {
+            return view('admin/admin_add_employee')->with('data',add_dept::all());
+        }
+        else{
+            return redirect('/admin/login');
+        }
     }
 
     /**
@@ -65,7 +71,13 @@ class ManageEmployeeController extends Controller
     public function show(manage_employee $manage_employee)
     {
         //
-        return view("admin/admin_view_employee")->with('showarr',manage_employee::all());
+        if(session('email')['email'])
+        {
+            return view("admin/admin_view_employee")->with('showarr',manage_employee::all());
+        }
+        else{
+            return redirect('/admin/login');
+        }
     }
 
     /**
@@ -115,8 +127,9 @@ class ManageEmployeeController extends Controller
      * @param  \App\manage_employee  $manage_employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(manage_employee $manage_employee)
+    public function destroy(manage_employee $manage_employee,$id)
     {
-        //
+        manage_employee::destroy(array('id',$id));
+        return redirect('admin/view_employee');
     }
 }

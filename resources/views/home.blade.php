@@ -1,9 +1,11 @@
 <html>
 
 <body>
+<center>
     <h1> Employee Leave Management Sytem </h1>
-    <a href="index">Employee Login</a>
-    <a href="admin/index">Admin Login</a>
+    <a href="login">Employee Login    </a> <br> || <br>
+    <a href="admin/login">Admin Login</a>
+</center>
 </body>
 
 </html>

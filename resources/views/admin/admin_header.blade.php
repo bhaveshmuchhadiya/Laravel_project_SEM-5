@@ -54,14 +54,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h1>
-                    <a href="index.html">Modernize</a>
+                    <a href="/">ELMS</a>
                 </h1>
                 <span>M</span>
             </div>
             <div class="profile-bg"></div>
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="admin_index">
+                    <a href="/admin/index">
                         <i class="fas fa-th-large"></i>
                         Dashboard
                     </a>
@@ -128,14 +128,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="approved_leaves">Approved Leaves</a>
                         </li>
                         <li>
-                            <a href="#">Notapproved Leaves</a>
+                            <a href="notapproved_leaves">Notapproved Leaves</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/admin/logout">
                         <i class="far fa-user"></i>
-                        Change Password
+                        Logout
                     </a>
                 </li>
         </nav>
@@ -149,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--// top-bar -->
             <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
-                <p>© 2020 Modernize .all Rights Reserved | Design by
+                <p>© 2020 ELMS .all Rights Reserved | Design by
                     <a href=""> Bhavesh Muchhadiya & Harshil Ranpara </a>
                 </p>
             </div>

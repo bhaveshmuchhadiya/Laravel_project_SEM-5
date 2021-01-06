@@ -22,6 +22,9 @@
                     <div class="stats">
                       <h5><strong>150</strong></h5>
                       <span>Total Users</span>
+					  
+						
+					  
                     </div>
                 </div>
         	 </div>
@@ -32,7 +35,7 @@
 			
 			<div class="clearfix"> </div>
 		</div>
-		
+		 
 	</div></div>		
 @endsection
 @extends('footer')

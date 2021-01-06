@@ -13,9 +13,15 @@ class LeaveTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+            {
         //
-        return view('admin/admin_add_leave');
+        if(session('email')['email'])
+        {
+            return view('admin/admin_add_leave');
+        }
+        else{
+            return redirect('/admin/login');
+        }
     }
 
     /**
@@ -53,7 +59,13 @@ class LeaveTypeController extends Controller
     public function show(leave_type $leave_type)
     {
         //
-        return view('admin/admin_view_leave_type')->with('leave_type',leave_type::all());
+        if(session('email')['email'])
+        {
+            return view('admin/admin_view_leave_type')->with('leave_type',leave_type::all());
+        }
+        else{
+            return redirect('/admin/login');
+        }    
     }
 
     /**

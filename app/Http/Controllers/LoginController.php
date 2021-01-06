@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Session;
 use App\login;
+use App\admin_login;
 use App\manage_employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -18,7 +20,12 @@ class LoginController extends Controller
         //
         return view('/login');
     }
-
+    
+    public function adminlogin()
+    {
+        # code...
+        return view('/admin/admin_login');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,6 +34,16 @@ class LoginController extends Controller
     public function create()
     {
         //
+        if(session('email')['email'])
+        {
+            $em = session('email')['email'];
+            $res = DB::select("select * from manage_employees where email = '$em'");
+            // print_r($res);
+            return view('employee_home',['res'=>$res]);
+        }
+        else{
+            return redirect('login');
+        }
     }
 
     /**
@@ -41,19 +58,18 @@ class LoginController extends Controller
         $res = new login;
         $email = $request->input('email');
         $password = $request->input('password');
-        $sel = $res::where('email','=', $email)->first();
-        $sel1 = $res::where('password','=', $password)->first();
-        if(!$sel){
-            Session:flash("email not match");
-            return redirect()->back();
+        $unm = $res::where('email','=', $email)->first();
+        $pas = $res::where('password','=', $password)->first();
+        if(!$unm){
+            return redirect("login");
         }
-        elseif(!$sel1){
-            SessionL:flash("password in incorrect");
-            return redirect()->back();
+        elseif(!$pas){
+            // $request->session()->flash('msg','password in incorrect');
+            return redirect("login");
         }
         else{
             $request->session()->put('email',$request->input());
-            return redirect('/index');
+            return redirect('/emp_home');
 
         //     $request->session()->put('u_nm',$request->input());
         //    // return $request->session()->get('u_nm');
@@ -61,53 +77,79 @@ class LoginController extends Controller
             
         }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\login  $login
-     * @return \Illuminate\Http\Response
-     */
-    public function show(login $login)
+    public function login_process(Request $request,admin_login $admin_login )
     {
-        //
+        # admin login ...
+        $res = new admin_login;
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $unm = $res::where('email','=', $email)->first();
+        $pas = $res::where('password','=', $password)->first();
+        if(!$unm){
+            return redirect("admin/login");
+        }
+        elseif(!$pas){
+            // $request->session()->flash('msg','password in incorrect');
+            return redirect("admin/login");
+        }
+        else{
+            $request->session()->put('email',$request->input());
+            return redirect('admin/index');
+        }
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\login  $login
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(login $login)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\login  $login
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, login $login)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\login  $login
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(login $login)
     {
         //
         Session::forget('email');
         Session::forget('id');
         return redirect('login');
+    }
 
+    public function des_log(login $login)
+    {
+        # code...
+        Session::forget('email');
+        Session::forget('id');
+        return redirect('admin/login');
+
+    }
+
+    public function change_pass(login $login)
+    {
+        # code...
+       
+        return view("change_password");
+        
+    }
+    public function forgot_password(Request $request,login $login)
+    {
+        # code...
+        $old_pass = $request->input('old_password');
+        $new_pass = $request->input('new_password');
+        $con_pass = $request->input('con_password');
+        if(session('email')['email'])
+        {
+            $em = session('email')['email'];
+            $res = DB::select("select password from manage_employees where email = '$em'");   
+            $ab = $res[0];
+            if($old_pass == $ab->password){
+                if($new_pass == $con_pass){
+                    DB::update("update manage_employees set password='$con_pass' where email = '$em' ");               
+                    
+                    return view("index");
+                }
+                else
+                {
+                    
+                    return redirect("change_pass");
+                }
+            }
+            else{
+            // print_r($ab->password);
+            return redirect("change_pass");
+            }
+        }
     }
 }

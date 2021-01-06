@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\add_dept;
+use App\manage_employee;
 use Illuminate\Http\Request;
 
 class AddDeptController extends Controller
@@ -15,7 +16,31 @@ class AddDeptController extends Controller
     public function index()
     {
         //
-        return view('admin/admin_add_department');
+        if(session('email')['email'])
+        {
+            return view('admin/admin_add_department');
+        }
+        else{
+            return redirect('/admin/login');
+        }
+    }
+    public function admin_home(Request $request,manage_employee $manage_employee)
+    {
+        # code...
+        if(session('email')['email'])
+        {
+            $res = manage_employee :: all();
+            // print($res);
+            for($x=0;$x<=sizeof($res);$x++){
+                $count = $x;
+            }
+            // print($count);
+            
+            return view('admin/index')->with(compact('count'));
+        }
+        else{
+            return redirect('/admin/login');
+        }
     }
 
     /**
@@ -54,7 +79,13 @@ class AddDeptController extends Controller
     {
         //
         // $showarr = add_dept::paginate(5);
-        return view('admin/admin_view_department')->with('showarr',add_dept::all());
+        if(session('email')['email'])
+        {
+            return view('admin/admin_view_department')->with('showarr',add_dept::all());
+        }
+        else{
+            return redirect('/admin/login');
+        }
     }
 
     /**
@@ -65,7 +96,13 @@ class AddDeptController extends Controller
      */
     public function edit(add_dept $add_dept,$id)
     {
-        return view('admin/admin_update_department')->with('show',add_dept::find($id));
+        if(session('email')['email'])
+        {
+            return view('admin/admin_update_department')->with('show',add_dept::find($id));
+        }
+        else{
+            return redirect('/admin/login');
+        }
     }
 
     /**

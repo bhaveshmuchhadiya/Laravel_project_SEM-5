@@ -25,7 +25,7 @@
                         <td>{{$show->department}}</td>
                         <td>{{$show->created_at}}</td>
                         <td><a href="edit_employee{{$show->id}}"><i class="fas fa-edit"></li>Edit</a></td>
-                        <td><a href="#"><i class="fas fa-trash"></li>delete</a></td>
+                        <td><a href="delete_employee/{{$show->id}}"><i class="fas fa-trash"></li>delete</a></td>
                     </tr>
                 @endforeach
                 </tbody>

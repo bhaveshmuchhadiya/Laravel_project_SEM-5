@@ -23,7 +23,7 @@
                         <td>{{ $show->department_name }}</td>
                         <td>{{ $show->department_code }}</td>
                         <td><a href="edit_department{{$show->id}}"><i class="fas fa-edit"></li>Edit</a></td>
-                        <td><a href="delete/{{$show->id}}"><i class="fas fa-trash"></li>delete</a></td>
+                        <td><a href="dept_delete/{{$show->id}}"><i class="fas fa-trash"></li>delete</a></td>
                     </tr>
                     @endforeach
                 </tbody>

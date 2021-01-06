@@ -15,7 +15,8 @@ class CreateLeavesTable extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->increments('l_id');
-            $table->foreign('id')->references('id')->on('manage_employees'); 
+            // $table->foreign('id')->references('id')->on('manage_employees');
+            // $tsble->int(''); 
             $table->string('leave_type');
             $table->date('from_date');
             $table->date('to_date');

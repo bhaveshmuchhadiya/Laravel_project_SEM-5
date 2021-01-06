@@ -110,7 +110,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
       <nav class="navbar navbar-inverse">
           <div class="navbar-header">
             
-            <h1><a class="navbar-brand" href="index"><span class="fa fa-user"></span> ELMS   </a></h1>
+            <h1><a class="navbar-brand" href="/"><span class="fa fa-user"></span> ELMS   </a></h1>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
@@ -119,7 +119,17 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <a href="emp_home">
                 <i class="fa fa-user"></i> <span>My Profile</span>
                 </a>
+			</li>
+			<li class="treeview"> @if(session('email')['email'])
+			<a href="change_pass">
+				<i class="fa fa-low-vision"></i> <span>Change Password</span>
+			</a>
+			@endif
+		</li>
+			<li>
                 <a href="apply_leaves"> <i class="fa fa-edit"></i> <span>Apply Leaves</span></a>
+			</li>
+			<li>
                 <a href="leaves"> <i class="fa fa-area-chart"></i> <span>Leaves</span></a>
               </li> 
               <li class="treeview">
@@ -128,7 +138,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="login"><i class="fa fa-angle-right"></i> Login</a></li>
+                  
                   <li><a href="logout"><i class="fa fa-angle-right"></i> Logout</a></li>
                   <!-- <li><a href="registration"><i class="fa fa-angle-right"></i> Register</a></li> -->
                   <!-- <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li> -->
@@ -153,56 +163,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
 				<!--toggle button end-->
 				<div class="profile_details_left"><!--notifications of menu start -->
-					<ul class="nofitications-dropdown">
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">4</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 3 new notification</h3>
-									</div>
-								</li>
-								<li><a href="#">
-									<div class="user_img"><img src="images/4.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet</p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								  <div class="clearfix"></div>	
-								 </a></li>
-								 <li class="odd"><a href="#">
-									<div class="user_img"><img src="images/1.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								 </a></li>
-								 <li><a href="#">
-									<div class="user_img"><img src="images/3.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								 </a></li>
-								<li><a href="#">
-								   <div class="user_img"><img src="images/2.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								</a></li>
-								 <li>
-									<div class="notification_bottom">
-										<a href="#">See all notifications</a>
-									</div> 
-								</li>
-							</ul>
-						</li>	
-							
-					</ul>
 					<div class="clearfix"> </div>
 				</div>
 				<!--notification menu end -->
@@ -211,39 +171,22 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			<div class="header-right">
 				
 				
-				<!--search-box-->
-				<div class="search-box">
-					<form class="input">
-						<input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31" />
-						<label class="input__label" for="input-31">
-							<svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-								<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
-							</svg>
-						</label>
-					</form>
-				</div><!--//end-search-box-->
-				
 				<div class="profile_details">		
 					<ul>
 						<li class="dropdown profile_details_drop">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
 									<div class="user-name">
-										<p>Admin Name</p>
-										<span>Administrator</span>
+										<p>{{session('email')['email']}}</p>
+										<span></span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
 									<div class="clearfix"></div>	
 								</div>	
 							</a>
-							<ul class="dropdown-menu drp-mnu">
-								<li> <a href="contact"><i class="fa fa-cog"></i> contact</a> </li> 
-								<li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li> 
-								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
-								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
-							</ul>
+							
 						</li>
 					</ul>
 				</div>
